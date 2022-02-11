@@ -13,6 +13,10 @@
 		CBABD75B27B28FF800A101A3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBABD75927B28FF800A101A3 /* Main.storyboard */; };
 		CBABD75D27B28FF800A101A3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CBABD75C27B28FF800A101A3 /* Assets.xcassets */; };
 		CBABD76027B28FF800A101A3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CBABD75E27B28FF800A101A3 /* LaunchScreen.storyboard */; };
+		CBB5E70027B51E8E005A20E6 /* Habit.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5E6FF27B51E8E005A20E6 /* Habit.swift */; };
+		CBB5E70227B51EB6005A20E6 /* HabitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5E70127B51EB6005A20E6 /* HabitStore.swift */; };
+		CBB5E70427B5994A005A20E6 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5E70327B5994A005A20E6 /* HabitsViewController.swift */; };
+		CBB5E70627B5995A005A20E6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5E70527B5995A005A20E6 /* InfoViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +28,10 @@
 		CBABD75C27B28FF800A101A3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CBABD75F27B28FF800A101A3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CBABD76127B28FF800A101A3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CBB5E6FF27B51E8E005A20E6 /* Habit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Habit.swift; sourceTree = SOURCE_ROOT; };
+		CBB5E70127B51EB6005A20E6 /* HabitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStore.swift; sourceTree = SOURCE_ROOT; };
+		CBB5E70327B5994A005A20E6 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = SOURCE_ROOT; };
+		CBB5E70527B5995A005A20E6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +64,10 @@
 		CBABD75227B28FF800A101A3 /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				CBB5E70527B5995A005A20E6 /* InfoViewController.swift */,
+				CBB5E70327B5994A005A20E6 /* HabitsViewController.swift */,
+				CBB5E70127B51EB6005A20E6 /* HabitStore.swift */,
+				CBB5E6FF27B51E8E005A20E6 /* Habit.swift */,
 				CBABD75327B28FF800A101A3 /* AppDelegate.swift */,
 				CBABD75527B28FF800A101A3 /* SceneDelegate.swift */,
 				CBABD75727B28FF800A101A3 /* ViewController.swift */,
@@ -139,7 +151,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				CBABD75827B28FF800A101A3 /* ViewController.swift in Sources */,
+				CBB5E70427B5994A005A20E6 /* HabitsViewController.swift in Sources */,
 				CBABD75427B28FF800A101A3 /* AppDelegate.swift in Sources */,
+				CBB5E70627B5995A005A20E6 /* InfoViewController.swift in Sources */,
+				CBB5E70227B51EB6005A20E6 /* HabitStore.swift in Sources */,
+				CBB5E70027B51E8E005A20E6 /* Habit.swift in Sources */,
 				CBABD75627B28FF800A101A3 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
