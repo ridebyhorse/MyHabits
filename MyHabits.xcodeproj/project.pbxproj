@@ -17,6 +17,7 @@
 		CBB5E70227B51EB6005A20E6 /* HabitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5E70127B51EB6005A20E6 /* HabitStore.swift */; };
 		CBB5E70427B5994A005A20E6 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5E70327B5994A005A20E6 /* HabitsViewController.swift */; };
 		CBB5E70627B5995A005A20E6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5E70527B5995A005A20E6 /* InfoViewController.swift */; };
+		CBC2994F27B68AE1004C2512 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2994E27B68AE1004C2512 /* HabitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		CBB5E70127B51EB6005A20E6 /* HabitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStore.swift; sourceTree = SOURCE_ROOT; };
 		CBB5E70327B5994A005A20E6 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = SOURCE_ROOT; };
 		CBB5E70527B5995A005A20E6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = SOURCE_ROOT; };
+		CBC2994E27B68AE1004C2512 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		CBABD75227B28FF800A101A3 /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				CBC2994E27B68AE1004C2512 /* HabitViewController.swift */,
 				CBB5E70527B5995A005A20E6 /* InfoViewController.swift */,
 				CBB5E70327B5994A005A20E6 /* HabitsViewController.swift */,
 				CBB5E70127B51EB6005A20E6 /* HabitStore.swift */,
@@ -153,6 +156,7 @@
 				CBABD75827B28FF800A101A3 /* ViewController.swift in Sources */,
 				CBB5E70427B5994A005A20E6 /* HabitsViewController.swift in Sources */,
 				CBABD75427B28FF800A101A3 /* AppDelegate.swift in Sources */,
+				CBC2994F27B68AE1004C2512 /* HabitViewController.swift in Sources */,
 				CBB5E70627B5995A005A20E6 /* InfoViewController.swift in Sources */,
 				CBB5E70227B51EB6005A20E6 /* HabitStore.swift in Sources */,
 				CBB5E70027B51E8E005A20E6 /* Habit.swift in Sources */,
@@ -233,7 +237,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -288,7 +292,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
