@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CB07773C27BBA7A0007B778E /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07773B27BBA7A0007B778E /* ProgressCollectionViewCell.swift */; };
+		CB07773E27BBA7C2007B778E /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07773D27BBA7C2007B778E /* HabitCollectionViewCell.swift */; };
 		CBABD75427B28FF800A101A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABD75327B28FF800A101A3 /* AppDelegate.swift */; };
 		CBABD75627B28FF800A101A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABD75527B28FF800A101A3 /* SceneDelegate.swift */; };
 		CBABD75827B28FF800A101A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABD75727B28FF800A101A3 /* ViewController.swift */; };
@@ -17,9 +19,12 @@
 		CBB5E70227B51EB6005A20E6 /* HabitStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5E70127B51EB6005A20E6 /* HabitStore.swift */; };
 		CBB5E70427B5994A005A20E6 /* HabitsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5E70327B5994A005A20E6 /* HabitsViewController.swift */; };
 		CBB5E70627B5995A005A20E6 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBB5E70527B5995A005A20E6 /* InfoViewController.swift */; };
+		CBC2994F27B68AE1004C2512 /* HabitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBC2994E27B68AE1004C2512 /* HabitViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CB07773B27BBA7A0007B778E /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		CB07773D27BBA7C2007B778E /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		CBABD75027B28FF800A101A3 /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBABD75327B28FF800A101A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBABD75527B28FF800A101A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +37,7 @@
 		CBB5E70127B51EB6005A20E6 /* HabitStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitStore.swift; sourceTree = SOURCE_ROOT; };
 		CBB5E70327B5994A005A20E6 /* HabitsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitsViewController.swift; sourceTree = SOURCE_ROOT; };
 		CBB5E70527B5995A005A20E6 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = SOURCE_ROOT; };
+		CBC2994E27B68AE1004C2512 /* HabitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitViewController.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +70,9 @@
 		CBABD75227B28FF800A101A3 /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				CB07773D27BBA7C2007B778E /* HabitCollectionViewCell.swift */,
+				CB07773B27BBA7A0007B778E /* ProgressCollectionViewCell.swift */,
+				CBC2994E27B68AE1004C2512 /* HabitViewController.swift */,
 				CBB5E70527B5995A005A20E6 /* InfoViewController.swift */,
 				CBB5E70327B5994A005A20E6 /* HabitsViewController.swift */,
 				CBB5E70127B51EB6005A20E6 /* HabitStore.swift */,
@@ -153,10 +162,13 @@
 				CBABD75827B28FF800A101A3 /* ViewController.swift in Sources */,
 				CBB5E70427B5994A005A20E6 /* HabitsViewController.swift in Sources */,
 				CBABD75427B28FF800A101A3 /* AppDelegate.swift in Sources */,
+				CBC2994F27B68AE1004C2512 /* HabitViewController.swift in Sources */,
 				CBB5E70627B5995A005A20E6 /* InfoViewController.swift in Sources */,
+				CB07773C27BBA7A0007B778E /* ProgressCollectionViewCell.swift in Sources */,
 				CBB5E70227B51EB6005A20E6 /* HabitStore.swift in Sources */,
 				CBB5E70027B51E8E005A20E6 /* Habit.swift in Sources */,
 				CBABD75627B28FF800A101A3 /* SceneDelegate.swift in Sources */,
+				CB07773E27BBA7C2007B778E /* HabitCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +245,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -288,7 +300,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
