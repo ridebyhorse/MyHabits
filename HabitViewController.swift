@@ -101,7 +101,6 @@ class HabitViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
-        navigationItem.title = "Создать"
         navigationItem.leftBarButtonItem = .init(title: "Отменить", style: .plain, target: self, action: #selector(didPressCancelButton))
         navigationItem.rightBarButtonItem = .init(title: "Сохранить", style: .plain, target: self, action: #selector(didPressSaveButton))
         
@@ -109,6 +108,8 @@ class HabitViewController: UIViewController {
         setupViews()
         
     }
+    
+    
    
     
     func setupViews() {
@@ -193,6 +194,8 @@ class HabitViewController: UIViewController {
         let newHabit = Habit(name: titleTextField.text!,
                              date: timePicker.date,
                              color: colorView.backgroundColor!)
+        
+        print("\(timePicker.date)")
         
         let store = HabitsStore.shared
         
