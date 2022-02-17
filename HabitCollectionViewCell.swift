@@ -138,8 +138,6 @@ class HabitCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func didTapTrackButton(sender: UIButton!) {
-        
-        let habitsVC = HabitsViewController()
 
         print("track button taped")
         
@@ -148,10 +146,11 @@ class HabitCollectionViewCell: UICollectionViewCell {
         if habit.isAlreadyTakenToday {
             return
         } else {
-            circleTrackView.backgroundColor = habit.color
-            habitsVC.collectionView.reloadData()
-            habitsVC.collectionView.layoutSubviews()
             HabitsStore.shared.track(habit)
+            circleTrackView.backgroundColor = habit.color
+//            counterTrackDateLabel.text = "Счетчик: \(habit.trackDates.count)"
+            habitCollectionView.reloadData()
+            
         }
         
         
