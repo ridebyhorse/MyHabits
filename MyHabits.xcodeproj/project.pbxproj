@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		CB07773C27BBA7A0007B778E /* ProgressCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07773B27BBA7A0007B778E /* ProgressCollectionViewCell.swift */; };
 		CB07773E27BBA7C2007B778E /* HabitCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB07773D27BBA7C2007B778E /* HabitCollectionViewCell.swift */; };
+		CBA0DC2727BE426A00D4A8AB /* HabitDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA0DC2627BE426A00D4A8AB /* HabitDetailsViewController.swift */; };
+		CBA0DC2927BE554200D4A8AB /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBA0DC2827BE554200D4A8AB /* TableViewCell.swift */; };
 		CBABD75427B28FF800A101A3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABD75327B28FF800A101A3 /* AppDelegate.swift */; };
 		CBABD75627B28FF800A101A3 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABD75527B28FF800A101A3 /* SceneDelegate.swift */; };
 		CBABD75827B28FF800A101A3 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBABD75727B28FF800A101A3 /* ViewController.swift */; };
@@ -25,6 +27,8 @@
 /* Begin PBXFileReference section */
 		CB07773B27BBA7A0007B778E /* ProgressCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
 		CB07773D27BBA7C2007B778E /* HabitCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitCollectionViewCell.swift; sourceTree = SOURCE_ROOT; };
+		CBA0DC2627BE426A00D4A8AB /* HabitDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HabitDetailsViewController.swift; sourceTree = SOURCE_ROOT; };
+		CBA0DC2827BE554200D4A8AB /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = SOURCE_ROOT; };
 		CBABD75027B28FF800A101A3 /* MyHabits.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyHabits.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CBABD75327B28FF800A101A3 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CBABD75527B28FF800A101A3 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +74,8 @@
 		CBABD75227B28FF800A101A3 /* MyHabits */ = {
 			isa = PBXGroup;
 			children = (
+				CBA0DC2827BE554200D4A8AB /* TableViewCell.swift */,
+				CBA0DC2627BE426A00D4A8AB /* HabitDetailsViewController.swift */,
 				CB07773D27BBA7C2007B778E /* HabitCollectionViewCell.swift */,
 				CB07773B27BBA7A0007B778E /* ProgressCollectionViewCell.swift */,
 				CBC2994E27B68AE1004C2512 /* HabitViewController.swift */,
@@ -163,10 +169,12 @@
 				CBB5E70427B5994A005A20E6 /* HabitsViewController.swift in Sources */,
 				CBABD75427B28FF800A101A3 /* AppDelegate.swift in Sources */,
 				CBC2994F27B68AE1004C2512 /* HabitViewController.swift in Sources */,
+				CBA0DC2727BE426A00D4A8AB /* HabitDetailsViewController.swift in Sources */,
 				CBB5E70627B5995A005A20E6 /* InfoViewController.swift in Sources */,
 				CB07773C27BBA7A0007B778E /* ProgressCollectionViewCell.swift in Sources */,
 				CBB5E70227B51EB6005A20E6 /* HabitStore.swift in Sources */,
 				CBB5E70027B51E8E005A20E6 /* Habit.swift in Sources */,
+				CBA0DC2927BE554200D4A8AB /* TableViewCell.swift in Sources */,
 				CBABD75627B28FF800A101A3 /* SceneDelegate.swift in Sources */,
 				CB07773E27BBA7C2007B778E /* HabitCollectionViewCell.swift in Sources */,
 			);

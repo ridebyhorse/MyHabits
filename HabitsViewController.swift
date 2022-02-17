@@ -7,19 +7,19 @@
 
 import UIKit
 
-class HabitsViewController: UIViewController {
+let habitCollectionView: UICollectionView = {
+    let viewLayout = UICollectionViewFlowLayout()
+    let collectionView = UICollectionView(
+        frame: .zero,
+        collectionViewLayout: viewLayout
+    )
+    collectionView.backgroundColor = .systemGray5
+    collectionView.translatesAutoresizingMaskIntoConstraints = false
     
-    let collectionView: UICollectionView = {
-        let viewLayout = UICollectionViewFlowLayout()
-        let collectionView = UICollectionView(
-            frame: .zero,
-            collectionViewLayout: viewLayout
-        )
-        collectionView.backgroundColor = .lightGray
-        collectionView.translatesAutoresizingMaskIntoConstraints = false
-        
-        return collectionView
-    }()
+    return collectionView
+}()
+
+class HabitsViewController: UIViewController {
     
     private enum LayoutConstant {
         static let spacing: CGFloat = 16.0
@@ -35,8 +35,10 @@ class HabitsViewController: UIViewController {
         view.backgroundColor = .white
         
         let addHabitButton = UIBarButtonItem(image: UIImage(systemName: "plus"), landscapeImagePhone: nil, style: .plain, target: self, action: #selector(showInfo))
+        addHabitButton.tintColor = UIColor(named: "purpleColor")
         
         self.navigationItem.rightBarButtonItem = addHabitButton
+        
         
         setupViews()
     
@@ -44,28 +46,28 @@ class HabitsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
-        collectionView.reloadData()
+        habitCollectionView.reloadData()
     }
     
     
     func setupViews() {
-        view.addSubview(collectionView)
-        collectionView.dataSource = self
-        collectionView.delegate = self
-        collectionView.register(
+        view.addSubview(habitCollectionView)
+        habitCollectionView.dataSource = self
+        habitCollectionView.delegate = self
+        habitCollectionView.register(
             HabitCollectionViewCell.self,
             forCellWithReuseIdentifier: HabitCollectionViewCell.identifier
         )
-        collectionView.register(
+        habitCollectionView.register(
             ProgressCollectionViewCell.self,
             forCellWithReuseIdentifier: ProgressCollectionViewCell.identifier
         )
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
-            collectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
-            collectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
+            habitCollectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            habitCollectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor),
+            habitCollectionView.leftAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leftAnchor),
+            habitCollectionView.rightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.rightAnchor)
         ])
     }
     
@@ -76,6 +78,7 @@ class HabitsViewController: UIViewController {
         let addNewHabitController  = UINavigationController(rootViewController: HabitViewController())
         
         addNewHabitController.topViewController?.navigationItem.title = "Создать"
+        addNewHabitController.navigationBar.tintColor = UIColor(named: "purpleColor")
         
         addNewHabitController.modalPresentationStyle = .fullScreen
         
@@ -197,8 +200,24 @@ extension HabitsViewController: UICollectionViewDelegateFlowLayout {
         }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//            print("Did select cell at \(indexPath.row)")
-//            let viewController = UIViewController()
-//            navigationController?.pushViewController(viewController, animated: true)
-        }
+        
+        print("Did select habit at \(indexPath.row)")
+        
+        let habits = HabitsStore.shared
+        
+        let title = habits.habits[indexPath.row].name
+        
+        let detailHabitController  = HabitDetailsViewController()
+        
+        navigationController?.pushViewController(detailHabitController, animated: true)
+        detailHabitController.navigationItem.title = title
+        detailHabitController.navigationController?.navigationBar.tintColor = UIColor(named: "purpleColor")
+        detailHabitController.navigationItem.rightBarButtonItem = .init(title: "Править", style: .plain, target: self, action: #selector(didPressEditButton))
+        
+    }
+    
+    @objc func didPressEditButton (sender: UIBarButtonItem!) {
+        print("did press edit button")
+        
+    }
 }

@@ -195,8 +195,6 @@ class HabitViewController: UIViewController {
                              date: timePicker.date,
                              color: colorView.backgroundColor!)
         
-        print("\(timePicker.date)")
-        
         let store = HabitsStore.shared
         
         store.habits.append(newHabit)
