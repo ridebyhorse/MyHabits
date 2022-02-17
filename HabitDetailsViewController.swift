@@ -17,7 +17,7 @@ class HabitDetailsViewController: UIViewController {
     
     fileprivate let cellReuseIdentifier: String = "CellReuseIdentifier"
     
-    private lazy var tableView: UITableView = {
+    private var tableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundColor = .systemGray5
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -50,12 +50,29 @@ class HabitDetailsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        navigationController?.navigationItem.rightBarButtonItem = .init(title: "Править", style: .plain, target: self, action: #selector(didPressEditButton))
+        navigationItem.rightBarButtonItem = .init(title: "Править", style: .plain, target: self, action: #selector(didPressEditButton))
+        title = HabitsStore.shared.habits[chosenHabit].name
+        tableView.reloadData()
         
     }
     
     @objc func didPressEditButton (sender: UIBarButtonItem!) {
+        print("edit habit button pressed")
         
+        let editHabitController  = UINavigationController(rootViewController: HabitViewController())
+        
+        editHabitController.topViewController?.navigationItem.title = "Править"
+        editHabitController.navigationBar.tintColor = UIColor(named: "purpleColor")
+        
+        editHabitController.modalPresentationStyle = .fullScreen
+        
+        chosenHabit = tableViewCell.tag
+        
+        present(
+            editHabitController,
+            animated: true,
+            completion: nil
+        )
     }
     
 }
@@ -77,27 +94,20 @@ extension HabitDetailsViewController: UITableViewDataSource {
         
         let date = habits.trackDateString(forIndex: (HabitsStore.shared.dates.count - indexPath.row - 1))
         
-        let isTracked = habits.habit((habits.habits[indexPath.row]), isTrackedIn: habits.dates.reversed()[indexPath.row])
+        let isTracked = habits.habit((habits.habits[chosenHabit]), isTrackedIn: habits.dates.reversed()[indexPath.row])
+        
     
         cell.update(date: date!, isTracked: isTracked)
         
         return cell
     }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        44
+    }
 }
 
+
+
 extension HabitDetailsViewController: UITableViewDelegate {
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        print("Did select cell at \(indexPath)")
-//        let nextViewController = EmploeeViewController()
-        
-//        let data = stuff[indexPath.row]
-//        nextViewController.update(title: data.0)
-//
-//        navigationController?.pushViewController(nextViewController, animated: true)
-        
-        //Чтобы вывести вью модально, а не в навигационном стеке
-        //present(nextViewController, animated: true, completion: nil)
-//    }
     
 }

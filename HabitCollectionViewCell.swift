@@ -148,7 +148,6 @@ class HabitCollectionViewCell: UICollectionViewCell {
         } else {
             HabitsStore.shared.track(habit)
             circleTrackView.backgroundColor = habit.color
-//            counterTrackDateLabel.text = "Счетчик: \(habit.trackDates.count)"
             habitCollectionView.reloadData()
             
         }

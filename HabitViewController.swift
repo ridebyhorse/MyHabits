@@ -7,6 +7,8 @@
 
 import UIKit
 
+public var chosenHabit = Int()
+
 class HabitViewController: UIViewController {
     
     let titleLabel: UILabel = {
@@ -96,6 +98,16 @@ class HabitViewController: UIViewController {
         return timePicker
     }()
     
+    let deleteButton: UIButton = {
+        let deleteButton = UIButton()
+        deleteButton.setTitle("Удалить привычку", for: .normal)
+        deleteButton.setTitleColor(.systemRed, for: .normal)
+        deleteButton.translatesAutoresizingMaskIntoConstraints = false
+        deleteButton.addTarget(self, action: #selector(didPressDeleteButton), for: .touchUpInside)
+
+        return deleteButton
+    }()
+    
     
     
     override func viewDidLoad() {
@@ -106,6 +118,16 @@ class HabitViewController: UIViewController {
         
         
         setupViews()
+        
+        if navigationItem.title == "Создать" {
+            deleteButton.isHidden = true
+        } else {
+            let habit = HabitsStore.shared.habits[chosenHabit]
+            titleTextField.text = habit.name
+            colorView.backgroundColor = habit.color
+            timePicker.date = habit.date
+            selectedTimeLabel.text = timePicker.date.formatted(date: .omitted, time: .shortened)
+        }
         
     }
     
@@ -121,7 +143,7 @@ class HabitViewController: UIViewController {
         view.addSubview(timePickerLabel)
         view.addSubview(selectedTimeLabel)
         view.addSubview(timePicker)
-        
+        view.addSubview(deleteButton)
        
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 22),
@@ -146,7 +168,11 @@ class HabitViewController: UIViewController {
             selectedTimeLabel.leadingAnchor.constraint(equalTo: timePickerLabel.trailingAnchor),
             timePicker.topAnchor.constraint(equalTo: timePickerLabel.bottomAnchor, constant: 16),
             timePicker.leadingAnchor.constraint(equalTo: timePickerLabel.leadingAnchor),
-            timePicker.trailingAnchor.constraint(equalTo: timeLabel.trailingAnchor)
+            timePicker.trailingAnchor.constraint(equalTo: timeLabel.trailingAnchor),
+            deleteButton.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor),
+            deleteButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor),
+            deleteButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -18),
+            deleteButton.heightAnchor.constraint(equalToConstant: 20)
         
         ])
         
@@ -191,17 +217,49 @@ class HabitViewController: UIViewController {
         
         print("save button pressed")
         
-        let newHabit = Habit(name: titleTextField.text!,
-                             date: timePicker.date,
-                             color: colorView.backgroundColor!)
+        if navigationItem.title == "Создать" {
+            let newHabit = Habit(name: titleTextField.text!,
+                                 date: timePicker.date,
+                                 color: colorView.backgroundColor!)
+            
+            let store = HabitsStore.shared
+            store.habits.append(newHabit)
+            self.dismiss(animated: true)
+            
+        } else {
+            
+            let newHabit = Habit(name: titleTextField.text!,
+                                 date: timePicker.date,
+                                 color: colorView.backgroundColor!)
+            
+            let store = HabitsStore.shared
+            store.habits.remove(at: chosenHabit)
+            store.habits.insert(newHabit, at: chosenHabit)
+            self.dismiss(animated: true)
+    
+        }
         
-        let store = HabitsStore.shared
+    }
+    
+    @objc func didPressDeleteButton(sender: UIButton!) {
+        print("did press delete button")
+        let habitsVC = UINavigationController(rootViewController: HabitsViewController())
+        habitsVC.modalPresentationStyle = .fullScreen
+        let alert = UIAlertController()
+        alert.title = "Удалить привычку"
+        alert.message = "Вы хотите удалить привычку \(HabitsStore.shared.habits[chosenHabit].name)?"
+        let cancelAction = UIAlertAction(title: "Отмена", style: .cancel, handler: { action in
+            alert.dismiss(animated: false, completion: nil)
+        })
+        let deleteAction = UIAlertAction(title: "Удалить", style: .destructive, handler: { action in
+            HabitsStore.shared.habits.remove(at: chosenHabit)
+            habitCollectionView.reloadData()
+            self.present(habitsVC, animated: true, completion: nil)
+        })
+        alert.addAction(cancelAction)
+        alert.addAction(deleteAction)
         
-        store.habits.append(newHabit)
-        
-        self.dismiss(animated: true)
-        
-        
+        present(alert, animated: true, completion: nil)
     }
 
 }
