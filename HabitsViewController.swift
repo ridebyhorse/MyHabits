@@ -47,6 +47,8 @@ class HabitsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(false)
         habitCollectionView.reloadData()
+        
+        
     }
     
     
@@ -115,9 +117,8 @@ extension HabitsViewController: UICollectionViewDataSource {
             for: indexPath) as! HabitCollectionViewCell
         
         habitCell.circleTrackView.tag = indexPath.row
-        
-        
-        
+
+
         if HabitsStore.shared.habits.count > 0 {
             
             let habit = HabitsStore.shared.habits[indexPath.row]
@@ -207,17 +208,16 @@ extension HabitsViewController: UICollectionViewDelegateFlowLayout {
         
         let title = habits.habits[indexPath.row].name
         
+        chosenHabit = indexPath.row
+        
         let detailHabitController  = HabitDetailsViewController()
+        detailHabitController.tableViewCell.tag = indexPath.row
         
         navigationController?.pushViewController(detailHabitController, animated: true)
         detailHabitController.navigationItem.title = title
         detailHabitController.navigationController?.navigationBar.tintColor = UIColor(named: "purpleColor")
-        detailHabitController.navigationItem.rightBarButtonItem = .init(title: "Править", style: .plain, target: self, action: #selector(didPressEditButton))
         
     }
     
-    @objc func didPressEditButton (sender: UIBarButtonItem!) {
-        print("did press edit button")
-        
-    }
+    
 }
